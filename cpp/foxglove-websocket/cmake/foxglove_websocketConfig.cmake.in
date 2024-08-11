@@ -2,6 +2,7 @@
 
 find_dependency(nlohmann_json)
 find_dependency(websocketpp)
+find_dependency(OpenSSL)
 
 include("${CMAKE_CURRENT_LIST_DIR}/foxglove_websocketTargets.cmake")
 
