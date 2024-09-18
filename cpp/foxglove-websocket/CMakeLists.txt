@@ -4,6 +4,7 @@ project(FoxgloveWebSocket CXX)
 find_package(nlohmann_json REQUIRED)
 find_package(websocketpp REQUIRED)
 find_package(OpenSSL REQUIRED)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_library(foxglove_websocket SHARED src/base64.cpp src/parameter.cpp src/serialization.cpp src/server_factory.cpp)
 # target_include_directories(foxglove_websocket
