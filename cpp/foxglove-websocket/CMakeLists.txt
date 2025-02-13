@@ -4,6 +4,9 @@ project(FoxgloveWebSocket CXX)
 find_package(nlohmann_json REQUIRED)
 find_package(websocketpp REQUIRED)
 find_package(OpenSSL REQUIRED)
+
+find_package(ZLIB REQUIRED)
+
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_library(foxglove_websocket SHARED src/base64.cpp src/parameter.cpp src/serialization.cpp src/server_factory.cpp)
@@ -20,7 +23,7 @@ target_include_directories(foxglove_websocket
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 )
 
-target_link_libraries(foxglove_websocket PUBLIC nlohmann_json::nlohmann_json websocketpp::websocketpp OpenSSL::SSL OpenSSL::Crypto)
+target_link_libraries(foxglove_websocket PUBLIC nlohmann_json::nlohmann_json websocketpp::websocketpp OpenSSL::SSL OpenSSL::Crypto ZLIB::ZLIB)
 set_target_properties(foxglove_websocket PROPERTIES CXX_STANDARD 17 CXX_STANDARD_REQUIRED ON)
 
 if (MSVC)
