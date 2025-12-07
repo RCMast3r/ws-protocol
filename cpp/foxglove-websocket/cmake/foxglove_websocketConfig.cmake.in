@@ -1,5 +1,7 @@
 @PACKAGE_INIT@
 
+include(CMakeFindDependencyMacro)
+
 find_dependency(nlohmann_json)
 find_dependency(websocketpp)
 find_dependency(OpenSSL)
